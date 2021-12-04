@@ -26,6 +26,14 @@ namespace OOT1.Services
                 person.Partner = partner;
             }
         }
+        public static void DeleteMarriage(Person person)
+        {
+            if (person.Partner is not null)
+            {
+                person.Partner.Partner = null;
+                person.Partner = null;
+            }
+        }
         
         public static List<Person> GetParentsList(Person person)
             => new List<Person>
